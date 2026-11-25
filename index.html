@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudFix Lab | AWS Troubleshooting Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-icon">☁</span>
+            <div>
+                <h1>CloudFix Lab</h1>
+                <p>AWS CLOUD OPERATIONS</p>
+            </div>
+        </div>
+        <div class="status">
+            <span class="pulse"></span>
+            INCIDENT SIMULATION
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">CLOUD OPERATIONS TRAINING</p>
+                <h2>Website Troubleshooting Simulator</h2>
+                <p class="subtitle">
+                    Investigate, diagnose and resolve real-world
+                    AWS website availability incidents.
+                </p>
+            </div>
+            <div class="incident-badge">
+                <span>●</span> WEBSITE UNAVAILABLE
+            </div>
+        </section>
+
+        <section class="metrics">
+            <div class="metric-card">
+                <p>INCIDENT ID</p>
+                <h3>INC-2026-001</h3>
+            </div>
+            <div class="metric-card">
+                <p>APPLICATION</p>
+                <h3>Customer Portal</h3>
+            </div>
+            <div class="metric-card">
+                <p>PROTOCOL</p>
+                <h3>HTTPS : 443</h3>
+            </div>
+            <div class="metric-card">
+                <p>SEVERITY</p>
+                <h3 class="critical">Critical</h3>
+            </div>
+        </section>
+
+        <section class="architecture">
+            <h3>Infrastructure Request Flow</h3>
+            <p class="section-description">
+                Follow the request from the user's browser to the backend.
+            </p>
+
+            <div class="flow">
+                <div class="flow-node">
+                    <span>💻</span>
+                    <strong>Browser</strong>
+                    <small>User Request</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="flow-node">
+                    <span>🌐</span>
+                    <strong>Route 53</strong>
+                    <small>DNS</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="flow-node">
+                    <span>⚖️</span>
+                    <strong>ALB</strong>
+                    <small>Load Balancer</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="flow-node">
+                    <span>🖥️</span>
+                    <strong>EC2</strong>
+                    <small>Application</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="flow-node">
+                    <span>🗄️</span>
+                    <strong>RDS</strong>
+                    <small>Database</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="simulator">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">LIVE INVESTIGATION</p>
+                    <h3>Incident Troubleshooting</h3>
+                </div>
+                <span class="step-counter" id="stepCounter">
+                    STEP 1 / 7
+                </span>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="investigation-card">
+                <span class="layer-tag" id="layerTag">
+                    BROWSER / USER SIDE
+                </span>
+
+                <h2 id="stepTitle">
+                    Step 1 – Reproduce the issue
+                </h2>
+
+                <p id="stepDescription">
+                    Establish whether the website is failing
+                    for one user or all users.
+                </p>
+
+                <div class="instruction">
+                    <strong>YOUR TASK</strong>
+                    <p id="stepTask">
+                        Ask the customer to try another browser
+                        or network and record the exact error.
+                    </p>
+                </div>
+
+                <div class="command-box">
+                    <div class="command-header">
+                        <span>DIAGNOSTIC COMMAND</span>
+                        <button id="copyButton">Copy</button>
+                    </div>
+                    <pre id="command">curl -Iv https://example.com</pre>
+                </div>
+
+                <h4>What did you find?</h4>
+                <div class="options" id="options"></div>
+
+                <div class="feedback hidden" id="feedback">
+                    <strong>Diagnostic Result</strong>
+                    <p id="feedbackText"></p>
+                </div>
+
+                <div class="controls">
+                    <button class="secondary-btn" id="previousBtn">
+                        ← Previous
+                    </button>
+                    <button class="primary-btn" id="nextBtn" disabled>
+                        Next Investigation →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>CloudFix Lab | AWS Cloud Operations Learning Project</p>
+            <p>Built with HTML, CSS and JavaScript</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
